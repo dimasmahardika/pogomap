@@ -1,0 +1,23 @@
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /.*
+  script: index.php
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /bootstrap
+  static_dir: bootstrap
+  
+- url: /(.+\.(gif|png|jpg))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg)$
+  application_readable: true
+  
+- url: /stylesheets
+  static_dir: stylesheets
+
+
